@@ -1,0 +1,127 @@
+{
+    "info": {
+        "_postman_id": "70305831-a70f-4db5-94aa-976c33201049",
+        "name": "Data Collecter API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "19626594"
+    },
+    "item": [
+        {
+            "name": "Ping",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3001/ping",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3001",
+                    "path": ["ping"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Open data",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"data\" : [\"foo\",  \"fazz\"]\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:3001/data",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3001",
+                    "path": ["data"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Protected data",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"data\" : [\"foo\", \"game\"],\r\n    \"passcode\": \"123\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:3001/data",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3001",
+                    "path": ["data"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Store open data",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"data\": [\r\n        {\r\n            \"foo\": \"bar\"\r\n        },\r\n        {\r\n            \"fazz\": 123\r\n        }\r\n    ],\r\n    \"passcode\": \"123\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:3001/data",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3001",
+                    "path": ["data"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Store protected data",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"data\": [\r\n        {\r\n            \"foo\": \"faxx\"\r\n        },\r\n        {\r\n            \"game\": \"yes\"\r\n        }\r\n    ],\r\n    \"protect\": true,\r\n    \"passcode\": \"123\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:3001/data",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3001",
+                    "path": ["data"]
+                }
+            },
+            "response": []
+        }
+    ]
+}
