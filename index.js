@@ -8,7 +8,7 @@ app.use(express.json());
 let open_temp_data = new Map();
 let protected_temp_data = new Map();
 
-const PASSCODE = process.env.PASSCODE;
+const { PASSCODE, PORT } = process.env;
 
 app.get("/ping", (req, res) => {
     res.send("pong");
@@ -80,6 +80,6 @@ app.get("/data", (req, res) => {
     // res.json(req.body);
 });
 
-app.listen(3001, () => {
-    console.log("Listening on 3001");
+app.listen(PORT, () => {
+    console.log("Listening on ", PORT);
 });
